@@ -166,3 +166,8 @@ RUN mkdir -p /.check-environment
 ADD ./files/check-environment /.check-environment/workspace
 
 CMD /bin/bash -l
+
+ADD ./files/workspace /home/ubuntu/workspace
+
+RUN chmod -R g+w /home/ubuntu/workspace && \
+    chown -R ubuntu:ubuntu /home/ubuntu/workspace
